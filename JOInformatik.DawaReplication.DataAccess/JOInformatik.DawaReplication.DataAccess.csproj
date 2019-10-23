@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <RootNamespace>JOInformatik.DawaReplication.DataAccess</RootNamespace>
+    <AssemblyName>JOInformatik.DawaReplication.DataAccess</AssemblyName>
+    <NeutralLanguage />
+    <Authors>JOInformatik</Authors>
+    <Company>JOInformatik Aps</Company>
+    <Copyright>JOInformatik Aps</Copyright>
+    <Description>C# and EntityFramework Core database definitions for DAWA replication</Description>
+    <Version>1.4.1</Version>
+    <IncludeSource>True</IncludeSource>
+    <IncludeSymbols>True</IncludeSymbols>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <AssemblyVersion>1.4.1.0</AssemblyVersion>
+    <FileVersion>1.4.1.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <NoWarn>NU1701</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20191011132425_BBR_TEST.cs" />
+    <Compile Remove="Migrations\20191011132425_BBR_TEST.Designer.cs" />
+    <Compile Remove="Migrations\20191011145302_BBR_Test.cs" />
+    <Compile Remove="Migrations\20191011145302_BBR_Test.Designer.cs" />
+    <Compile Remove="Migrations\20191016094307_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.cs" />
+    <Compile Remove="Migrations\20191016094307_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.Designer.cs" />
+    <Compile Remove="Migrations\20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.cs" />
+    <Compile Remove="Migrations\20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.Designer.cs" />
+    <Compile Remove="Migrations\20191016153623_20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPos.cs" />
+    <Compile Remove="Migrations\20191016153623_20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPos.Designer.cs" />
+    <Compile Remove="Migrations\20191017064854_Test.cs" />
+    <Compile Remove="Migrations\20191017064854_Test.Designer.cs" />
+    <Compile Remove="Migrations\20191017071438_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.cs" />
+    <Compile Remove="Migrations\20191017071438_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.Designer.cs" />
+    <Compile Remove="Migrations\20191017074727_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.cs" />
+    <Compile Remove="Migrations\20191017074727_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.Designer.cs" />
+    <Compile Remove="Migrations\20191017080004_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.cs" />
+    <Compile Remove="Migrations\20191017080004_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.Designer.cs" />
+    <Compile Remove="Migrations\20191017080103_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV3.cs" />
+    <Compile Remove="Migrations\20191017080103_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV3.Designer.cs" />
+    <Compile Remove="Migrations\20191017080425_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV4.cs" />
+    <Compile Remove="Migrations\20191017080425_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV4.Designer.cs" />
+    <Compile Remove="Migrations\20191017080507_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.cs" />
+    <Compile Remove="Migrations\20191017080507_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.Designer.cs" />
+    <Compile Remove="Migrations\20191017080821_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.cs" />
+    <Compile Remove="Migrations\20191017080821_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.Designer.cs" />
+    <Compile Remove="Migrations\20191017080912_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.cs" />
+    <Compile Remove="Migrations\20191017080912_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.Designer.cs" />
+    <Compile Remove="Migrations\20191017080938_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV6.cs" />
+    <Compile Remove="Migrations\20191017080938_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV6.Designer.cs" />
+    <Compile Remove="Migrations\20191017084359_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV7.cs" />
+    <Compile Remove="Migrations\20191017084359_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV7.Designer.cs" />
+    <Compile Remove="Migrations\20191017084602_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV9.cs" />
+    <Compile Remove="Migrations\20191017084602_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV9.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="GeoJSON.Net">
+      <Version>1.1.72</Version>
+    </PackageReference>
+    <PackageReference Include="GeoJSON.Net.Contrib.MsSqlSpatial">
+      <Version>0.3.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers">
+      <Version>2.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <Version>2.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer">
+      <Version>2.2.6</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <Version>2.2.6</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json">
+      <Version>2.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.SqlServer.Types">
+      <Version>14.0.1016.290</Version>
+    </PackageReference>
+    <PackageReference Include="System.Buffers">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Configuration.ConfigurationManager">
+      <Version>4.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Diagnostics.DiagnosticSource">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="System.IO">
+      <Version>4.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Memory">
+      <Version>4.5.3</Version>
+    </PackageReference>
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="System.Numerics.Vectors">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Target Name="UpdatingOutputJoiClientPackage" AfterTargets="GenerateNuspec">
+    <Message Text="Updating nuget pakke updating package $(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg" Importance="high" />
+    <Message Text="Updating nuget pakke updating package $(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).symbols.nupkg to $(PackageLocation)" Importance="high" />
+    <Copy SourceFiles="$(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg" DestinationFolder="$(PackageLocation)" SkipUnchangedFiles="true" Condition="'$(PublishNugetJoi)'=='true'" />
+    <Copy SourceFiles="$(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).symbols.nupkg" DestinationFolder="$(PackageLocation)" SkipUnchangedFiles="true" Condition="'$(PublishNugetJoi)'=='true'" />
+    <Message Text="Updating nuget pakke updating package done $(PackageOutputAbsolutePath)$(PackageId).$(PackageVersion).nupkg to $(PackageLocation)" Importance="high" Condition="'$(PublishNugetJoi)'=='true'" />
+  </Target>
+</Project>

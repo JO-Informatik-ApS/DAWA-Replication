@@ -1,0 +1,16 @@
+-- NOTE: Make this feature active in app.config by setting field ActiveFixes to true.
+-- Remember to turn off approx after 10 minutes.
+--
+-- Line format: TableName; ColumnName; DataValueBad (as name-value pair); DataValueValid (as name-valuepair); Active (true/false).
+-- Semicolon is the separator.
+-- Example with "Sogn" that sometimes has null in field geo_version (and geo_version databasecolumn is non-null):
+-- Sogn;geo_version;"geo_version":null,;"geo_version":0,;true
+--   TableName      : Sogn
+--   ColumnName     : geo_version
+--   DataValueBad   : "geo_version":null,  (Note: Must include comma!)
+--   DataValueValid : "geo_version":0,     (Note: Must include comma!)
+--   Active         : true
+--
+Højde;højde;"højde":null,;"højde":-9999,;false
+Sogn;geo_version;"geo_version":null,;"geo_version":0,;false
+Menighedsrådsafstemningsområde;geo_version;"geo_version":null,;"geo_version":0,;false
