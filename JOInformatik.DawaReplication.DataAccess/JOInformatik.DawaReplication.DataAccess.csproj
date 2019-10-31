@@ -27,42 +27,6 @@
     <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="Migrations\20191011132425_BBR_TEST.cs" />
-    <Compile Remove="Migrations\20191011132425_BBR_TEST.Designer.cs" />
-    <Compile Remove="Migrations\20191011145302_BBR_Test.cs" />
-    <Compile Remove="Migrations\20191011145302_BBR_Test.Designer.cs" />
-    <Compile Remove="Migrations\20191016094307_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.cs" />
-    <Compile Remove="Migrations\20191016094307_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.Designer.cs" />
-    <Compile Remove="Migrations\20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.cs" />
-    <Compile Remove="Migrations\20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStr.Designer.cs" />
-    <Compile Remove="Migrations\20191016153623_20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPos.cs" />
-    <Compile Remove="Migrations\20191016153623_20191016125811_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPos.Designer.cs" />
-    <Compile Remove="Migrations\20191017064854_Test.cs" />
-    <Compile Remove="Migrations\20191017064854_Test.Designer.cs" />
-    <Compile Remove="Migrations\20191017071438_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.cs" />
-    <Compile Remove="Migrations\20191017071438_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.Designer.cs" />
-    <Compile Remove="Migrations\20191017074727_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.cs" />
-    <Compile Remove="Migrations\20191017074727_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.Designer.cs" />
-    <Compile Remove="Migrations\20191017080004_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.cs" />
-    <Compile Remove="Migrations\20191017080004_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV2.Designer.cs" />
-    <Compile Remove="Migrations\20191017080103_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV3.cs" />
-    <Compile Remove="Migrations\20191017080103_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV3.Designer.cs" />
-    <Compile Remove="Migrations\20191017080425_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV4.cs" />
-    <Compile Remove="Migrations\20191017080425_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV4.Designer.cs" />
-    <Compile Remove="Migrations\20191017080507_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.cs" />
-    <Compile Remove="Migrations\20191017080507_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.Designer.cs" />
-    <Compile Remove="Migrations\20191017080821_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.cs" />
-    <Compile Remove="Migrations\20191017080821_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.Designer.cs" />
-    <Compile Remove="Migrations\20191017080912_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.cs" />
-    <Compile Remove="Migrations\20191017080912_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV5.Designer.cs" />
-    <Compile Remove="Migrations\20191017080938_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV6.cs" />
-    <Compile Remove="Migrations\20191017080938_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV6.Designer.cs" />
-    <Compile Remove="Migrations\20191017084359_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV7.cs" />
-    <Compile Remove="Migrations\20191017084359_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV7.Designer.cs" />
-    <Compile Remove="Migrations\20191017084602_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV9.cs" />
-    <Compile Remove="Migrations\20191017084602_GeoVersionNullAndVirtualPropertiesAndDateTimeToDefaultBBRTEKVindmlStrVejpunkPosV9.Designer.cs" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="GeoJSON.Net">
       <Version>1.1.72</Version>
     </PackageReference>

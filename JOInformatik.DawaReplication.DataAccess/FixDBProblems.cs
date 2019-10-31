@@ -26,6 +26,21 @@ namespace JOInformatik.DawaReplication.DataAccess
             dBContext.Database.ExecuteSqlCommand(sql);
         }
 
+        public static void RebuildIndices(DbContext dbContext)
+        {
+            var sql = @"
+            
+                -- vvvvvvvvvv Rebuild all indices after udtraek. vvvvvvvvvv            
+
+                USE [DAWA_REPLICATION]
+                Exec sp_msforeachtable 'SET QUOTED_IDENTIFIER ON; ALTER INDEX ALL ON ? REBUILD'
+
+                -- ^^^^^^^^^^ Rebuild all indices after udtraek. ^^^^^^^^^^";
+
+            dbContext.Database.ExecuteSqlCommand(sql);
+
+        }
+
         public static void CreateSprocSetExtendedproperty(DbContext dBContext)
         {
             var sql = @"IF OBJECT_ID('dbo.SetExtendedproperty', 'P') IS NULL

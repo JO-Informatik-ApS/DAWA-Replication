@@ -79,6 +79,10 @@ namespace JOInformatik.DawaReplication
         /// <summary> Gets or sets the boolean for using Microsoft Application Insights.</summary>
         public static bool UseMSApplicationInsights { get; set; }
 
+        public static bool JsonSerializerIgnoreNullValue { get; set; }
+
+        public static JsonSerializerSettings UserJsonSerializerSettings { get; set; }
+
 #pragma warning disable IDE0044 // Add readonly modifier
         private static List<FixInfo> fixInfoList = new List<FixInfo>();
 #pragma warning restore IDE0044 // Add readonly modifier
@@ -95,7 +99,7 @@ namespace JOInformatik.DawaReplication
         /// <param name="dawaApiUri">Typical 'https://dawa.aws.dk/' .</param>
         /// <param name="readTimeoutInSeconds">DAWA api timeout in seconds. Normally 300 seconds.</param>
         /// <param name="udtraekRowsMax">Max number of rows to read. When 0 all rows are read.</param>
-        public static void InitSettings(DawaReplicationDBContext dbContext, List<string> tableList, string dawaApiUri, string dawaTestApiUri, int readTimeoutInSeconds, int udtraekRowsMax, int udtraekBulkSize, int dkStedDataStartPos, int dkStedBulkSize, int dbCommandTimeoutInSeconds, string tempDataFolderPath, bool activeFixes, string activeFixesListFileLocation, bool useMSApplicationInsights)
+        public static void InitSettings(DawaReplicationDBContext dbContext, List<string> tableList, string dawaApiUri, string dawaTestApiUri, int readTimeoutInSeconds, int udtraekRowsMax, int udtraekBulkSize, int dkStedDataStartPos, int dkStedBulkSize, int dbCommandTimeoutInSeconds, string tempDataFolderPath, bool activeFixes, string activeFixesListFileLocation, bool useMSApplicationInsights, bool jsonSerializerIgnoreNullValue)
         {
             if (tableList == null)
             {
@@ -146,6 +150,12 @@ namespace JOInformatik.DawaReplication
             ActiveFixes = activeFixes;
             ActiveFixesListFileLocation = activeFixesListFileLocation;
             UseMSApplicationInsights = useMSApplicationInsights;
+            UserJsonSerializerSettings = new JsonSerializerSettings { };
+            JsonSerializerIgnoreNullValue = jsonSerializerIgnoreNullValue;
+            if (jsonSerializerIgnoreNullValue)
+            {
+                UserJsonSerializerSettings = new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore };
+            }
 
             if (ActiveFixes)
             {
@@ -277,7 +287,7 @@ namespace JOInformatik.DawaReplication
                         {
                             if (reader.TokenType == JsonToken.StartObject)
                             {
-                                T itemAsObject = JsonConvert.DeserializeObject<T>(JObject.Load(reader).ToString(Formatting.None));
+                                T itemAsObject = JsonConvert.DeserializeObject<T>(JObject.Load(reader).ToString(Formatting.None), UserJsonSerializerSettings);
                                 itemAsObject.EntityTxid = dawaProcessInfo.Txid;
                                 itemList.Add(itemAsObject);
 
@@ -369,7 +379,7 @@ namespace JOInformatik.DawaReplication
                                     itemData = itemData.Replace(fixInfo.DataValueBad, fixInfo.DataValueValid);
                                 }
 
-                                T itemAsObject = JsonConvert.DeserializeObject<T>(itemData);
+                                T itemAsObject = JsonConvert.DeserializeObject<T>(itemData, UserJsonSerializerSettings);
                                 itemAsObject.SetEntityFields(item);
                                 switch (operation)
                                 {
@@ -506,8 +516,8 @@ namespace JOInformatik.DawaReplication
                         if (reader.TokenType == JsonToken.StartObject)
                         {
                             var item = JObject.Load(reader);
-                            T rootItemAsObject = JsonConvert.DeserializeObject<T>(item.ToString(Formatting.None));
-                            T itemAsObject = JsonConvert.DeserializeObject<T>(item["properties"].ToString(Formatting.None));
+                            T rootItemAsObject = JsonConvert.DeserializeObject<T>(item.ToString(Formatting.None), UserJsonSerializerSettings);
+                            T itemAsObject = JsonConvert.DeserializeObject<T>(item["properties"].ToString(Formatting.None), UserJsonSerializerSettings);
 
                             itemAsObject.SetEntityFields(item);
                             itemAsObject.Geometry = rootItemAsObject.Geometry;

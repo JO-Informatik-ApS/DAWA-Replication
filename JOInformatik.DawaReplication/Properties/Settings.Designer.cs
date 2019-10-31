@@ -211,5 +211,23 @@ namespace JOInformatik.DawaReplication.Properties {
                 return ((bool)(this["UseMSApplicationInsights"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool JsonSerializerIgnoreNullValue {
+            get {
+                return ((bool)(this["JsonSerializerIgnoreNullValue"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RebuildIndicesAfterReplication {
+            get {
+                return ((bool)(this["RebuildIndicesAfterReplication"]));
+            }
+        }
     }
 }

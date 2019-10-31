@@ -13,7 +13,7 @@ using System.Threading;
 namespace JOInformatik.DawaReplication
 {
     /// <summary>
-    /// Main method holder class.
+    /// Main method holder class. 
     /// </summary>
     public static class Program
     {
@@ -74,7 +74,7 @@ namespace JOInformatik.DawaReplication
                     FixDBProblems.FixDbProblems(dbContext);
                 }
 
-                EntityManager.InitSettings(dbContext, list.Select(x => x.Name).ToList(), settings.DawaApiUri, settings.DawaTestApiUri, settings.DawaApiReadTimeoutInSeconds, settings.UdtraekRowsMax, settings.UdtraekBulkSize, settings.DKStedDataStartPos, settings.DKStedBulkSize, settings.DBCommandTimeoutInSeconds, settings.TempDataFolderPath, settings.ActiveFixes, settings.ActiveFixesListFileLocation, settings.UseMSApplicationInsights);
+                EntityManager.InitSettings(dbContext, list.Select(x => x.Name).ToList(), settings.DawaApiUri, settings.DawaTestApiUri, settings.DawaApiReadTimeoutInSeconds, settings.UdtraekRowsMax, settings.UdtraekBulkSize, settings.DKStedDataStartPos, settings.DKStedBulkSize, settings.DBCommandTimeoutInSeconds, settings.TempDataFolderPath, settings.ActiveFixes, settings.ActiveFixesListFileLocation, settings.UseMSApplicationInsights, settings.JsonSerializerIgnoreNullValue);
 
                 LocalDataHelper.MakeFolder(settings.TempDataFolderPath);
 
@@ -102,6 +102,14 @@ namespace JOInformatik.DawaReplication
                         {
                             break;
                         }
+                    }
+                }
+
+                if (processMode == EntityProcessMode.Udtraek)
+                {
+                    if (settings.RebuildIndicesAfterReplication)
+                    {
+                        FixDBProblems.RebuildIndices(dbContext);
                     }
                 }
 
