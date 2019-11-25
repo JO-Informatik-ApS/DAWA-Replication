@@ -84,8 +84,8 @@ namespace JOInformatik.DawaReplication.DataAccess
         /// 
         /// </summary>
         
-        [Column("adgangFraHusnummer")]
-        public virtual Guid? AdgangFraHusnummer { get; set; }
+        [Column("husnummer")]
+        public virtual Guid? Husnummer { get; set; }
 
         /// <summary>
         /// 

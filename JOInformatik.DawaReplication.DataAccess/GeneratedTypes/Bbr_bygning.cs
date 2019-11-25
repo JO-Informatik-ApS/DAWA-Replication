@@ -628,13 +628,6 @@ namespace JOInformatik.DawaReplication.DataAccess
         public virtual string Byg153Konstruktionsforhold { get; set; }
 
         /// <summary>
-        /// Angiver type af flytning af en bygning. For mulige værdier, se <a href="undefined">kodelisten.</a>
-        /// </summary>
-        
-        [Column("byg301TypeAfFlytning", TypeName = "varchar(200)")]
-        public virtual string Byg301TypeAfFlytning { get; set; }
-
-        /// <summary>
         /// Angiver den kommune bygningen flyttes til.
         /// </summary>
         
@@ -655,13 +648,6 @@ namespace JOInformatik.DawaReplication.DataAccess
         [Column("byg404Koordinat")]
         [JsonConverter(typeof(SqlGeometryConverter))]
         public virtual SqlGeometry Byg404Koordinat { get; set; }
-
-        /// <summary>
-        /// Angiver geografisk koordinatsystem og projektion. For mulige værdier, se <a href="https://ki.bbr.dk/kodelister-bbr/0/1/0/Koordinatsystem">kodelisten.</a>
-        /// </summary>
-        
-        [Column("byg406Koordinatsystem", TypeName = "varchar(1)")]
-        public virtual string Byg406Koordinatsystem { get; set; }
 
         /// <summary>
         /// Beskrivende tekstnotat om særlige forhold for dette BBR-element

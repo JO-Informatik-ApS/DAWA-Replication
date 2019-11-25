@@ -196,15 +196,6 @@ namespace JOInformatik.DawaReplication.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("https://dawa.aws.dk/")]
-        public string DawaTestApiUri {
-            get {
-                return ((string)(this["DawaTestApiUri"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool UseMSApplicationInsights {
             get {
@@ -214,7 +205,7 @@ namespace JOInformatik.DawaReplication.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool JsonSerializerIgnoreNullValue {
             get {
                 return ((bool)(this["JsonSerializerIgnoreNullValue"]));

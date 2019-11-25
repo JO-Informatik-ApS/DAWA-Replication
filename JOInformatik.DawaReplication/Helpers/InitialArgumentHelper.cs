@@ -13,12 +13,14 @@ namespace JOInformatik.DawaReplication.Helpers
 
         private const string Dagi = " Dagi command initializes the update of DAGI tables circumventing the replication API.";
 
-        private const string Help = " Available commands are \"Udtraek\", \"Update\", \"Dagi\", \"/Update-Database\"." +
+        private const string Help = " Available commands are \"Udtraek\", \"Update\", \"Dagi\", \"/Update-Database\", \"/Update-database-exit." +
             "\n For more information about the different commands type \"?\" and the name of the command.\n For example type \"?Update\" to get more information about the update command.";
 
         private const string DbUpdateComplete = " The database has been succesfully updated with the latest migration.";
 
         private const string UpdateDatabaseHelp = " The UpdateDatabase command applies the newest migration to the database.";
+
+        private const string UpdateDatabaseHelpExit = " The UpdateDatabase command applies the newest migration to the database and exits the program.";
 
         private const string InsertText = " Input your command. Type /help or /h for help and a list of commands, or enter your command.";
 
@@ -63,6 +65,11 @@ namespace JOInformatik.DawaReplication.Helpers
                     UpdateDatabase();
                     Console.WriteLine(InsertText);
                     return ConsoleHelper();
+                case "/update-database-exit":
+                    UpdateDatabase();
+                    Console.WriteLine(InsertText); ;
+                    Environment.Exit((int)ReturnCode.Success);
+                    return EntityProcessMode.Dagi;
                 default:
                     Console.WriteLine(InsertText);
                     return ConsoleHelper();
@@ -126,6 +133,18 @@ namespace JOInformatik.DawaReplication.Helpers
                     Console.WriteLine(UpdateDatabaseHelp);
                     Console.WriteLine(InsertText);
                     return ConsoleHelper();
+                case "help update-database-exit":
+                case "/help update-database-exit":
+                case "?update-database-exit":
+                    Console.WriteLine(UpdateDatabaseHelpExit);
+                    Console.WriteLine(InsertText);
+                    return ConsoleHelper();
+                case "/update-database-exit":
+                case "update-database-exit":
+                    UpdateDatabase();
+                    Console.WriteLine(InsertText); ;
+                    Environment.Exit((int)ReturnCode.Success);
+                    return EntityProcessMode.Dagi;
                 case "exit":
                 case "/exit":
                 case "quit":

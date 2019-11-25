@@ -59,14 +59,11 @@
     <Setting Name="ActiveFixes" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="DawaTestApiUri" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">https://dawa.aws.dk/</Value>
-    </Setting>
     <Setting Name="UseMSApplicationInsights" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="JsonSerializerIgnoreNullValue" Type="System.Boolean" Scope="Application">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="RebuildIndicesAfterReplication" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>

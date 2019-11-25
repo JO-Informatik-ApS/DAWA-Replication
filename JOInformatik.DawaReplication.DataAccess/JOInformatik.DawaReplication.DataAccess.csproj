@@ -27,11 +27,12 @@
     <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Migrations\20191114121145_ChangedGeoAendretAndAendretToString.cs" />
+    <Compile Remove="Migrations\20191114121145_ChangedGeoAendretAndAendretToString.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="GeoJSON.Net">
       <Version>1.1.72</Version>
-    </PackageReference>
-    <PackageReference Include="GeoJSON.Net.Contrib.MsSqlSpatial">
-      <Version>0.3.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Analyzers">
       <Version>2.2.6</Version>

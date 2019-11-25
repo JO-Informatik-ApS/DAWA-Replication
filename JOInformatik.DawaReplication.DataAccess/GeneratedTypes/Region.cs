@@ -29,17 +29,17 @@ namespace JOInformatik.DawaReplication.DataAccess
         /// Tidspunkt for seneste ændring i DAWA
         /// </summary>
         
-        [Column("ændret")]
+        [Column("ændret", TypeName = "varchar(50)")]
         [Required()]
-        public virtual DateTime Ændret { get; set; }
+        public virtual string Ændret { get; set; }
 
         /// <summary>
         /// Tidspunkt for seneste ændring af geometri i DAWA
         /// </summary>
         
-        [Column("geo_ændret")]
+        [Column("geo_ændret", TypeName = "varchar(50)")]
         [Required()]
-        public virtual DateTime Geo_ændret { get; set; }
+        public virtual string Geo_ændret { get; set; }
 
         /// <summary>
         /// Versionsangivelse for geometrien. Inkrementeres hver gang geometrien ændrer sig i DAWA.

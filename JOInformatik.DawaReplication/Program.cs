@@ -74,7 +74,7 @@ namespace JOInformatik.DawaReplication
                     FixDBProblems.FixDbProblems(dbContext);
                 }
 
-                EntityManager.InitSettings(dbContext, list.Select(x => x.Name).ToList(), settings.DawaApiUri, settings.DawaTestApiUri, settings.DawaApiReadTimeoutInSeconds, settings.UdtraekRowsMax, settings.UdtraekBulkSize, settings.DKStedDataStartPos, settings.DKStedBulkSize, settings.DBCommandTimeoutInSeconds, settings.TempDataFolderPath, settings.ActiveFixes, settings.ActiveFixesListFileLocation, settings.UseMSApplicationInsights, settings.JsonSerializerIgnoreNullValue);
+                EntityManager.InitSettings(dbContext, list.Select(x => x.Name).ToList(), settings.DawaApiUri, settings.DawaApiReadTimeoutInSeconds, settings.UdtraekRowsMax, settings.UdtraekBulkSize, settings.DKStedDataStartPos, settings.DKStedBulkSize, settings.DBCommandTimeoutInSeconds, settings.TempDataFolderPath, settings.ActiveFixes, settings.ActiveFixesListFileLocation, settings.UseMSApplicationInsights, settings.JsonSerializerIgnoreNullValue);
 
                 LocalDataHelper.MakeFolder(settings.TempDataFolderPath);
 

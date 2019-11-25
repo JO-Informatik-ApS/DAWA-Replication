@@ -4,15 +4,17 @@ using JOInformatik.DawaReplication.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Microsoft.SqlServer.Types;
 
 namespace JOInformatik.DawaReplication.DataAccess.Migrations
 {
     [DbContext(typeof(DawaReplicationDBContext))]
-    partial class DawaReplicationDBContextModelSnapshot : ModelSnapshot
+    [Migration("20191114125953_ChangedGeoAendretAndAendretToString")]
+    partial class ChangedGeoAendretAndAendretToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -512,6 +514,10 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                         .HasColumnName("byg153Konstruktionsforhold")
                         .HasColumnType("varchar(1)");
 
+                    b.Property<string>("Byg301TypeAfFlytning")
+                        .HasColumnName("byg301TypeAfFlytning")
+                        .HasColumnType("varchar(200)");
+
                     b.Property<int?>("Byg302Tilflytterkommune")
                         .HasColumnName("byg302Tilflytterkommune");
 
@@ -521,6 +527,10 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
 
                     b.Property<SqlGeometry>("Byg404Koordinat")
                         .HasColumnName("byg404Koordinat");
+
+                    b.Property<string>("Byg406Koordinatsystem")
+                        .HasColumnName("byg406Koordinatsystem")
+                        .HasColumnType("varchar(1)");
 
                     b.Property<string>("Byg500Notatlinjer")
                         .HasColumnName("byg500Notatlinjer")
@@ -832,6 +842,10 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                         .HasColumnName("byg153Konstruktionsforhold")
                         .HasColumnType("varchar(1)");
 
+                    b.Property<string>("Byg301TypeAfFlytning")
+                        .HasColumnName("byg301TypeAfFlytning")
+                        .HasColumnType("varchar(200)");
+
                     b.Property<int?>("Byg302Tilflytterkommune")
                         .HasColumnName("byg302Tilflytterkommune");
 
@@ -841,6 +855,10 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
 
                     b.Property<SqlGeometry>("Byg404Koordinat")
                         .HasColumnName("byg404Koordinat");
+
+                    b.Property<string>("Byg406Koordinatsystem")
+                        .HasColumnName("byg406Koordinatsystem")
+                        .HasColumnType("varchar(1)");
 
                     b.Property<string>("Byg500Notatlinjer")
                         .HasColumnName("byg500Notatlinjer")
@@ -1137,6 +1155,10 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                         .HasColumnName("byg153Konstruktionsforhold")
                         .HasColumnType("varchar(1)");
 
+                    b.Property<string>("Byg301TypeAfFlytning")
+                        .HasColumnName("byg301TypeAfFlytning")
+                        .HasColumnType("varchar(200)");
+
                     b.Property<int?>("Byg302Tilflytterkommune")
                         .HasColumnName("byg302Tilflytterkommune");
 
@@ -1146,6 +1168,10 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
 
                     b.Property<SqlGeometry>("Byg404Koordinat")
                         .HasColumnName("byg404Koordinat");
+
+                    b.Property<string>("Byg406Koordinatsystem")
+                        .HasColumnName("byg406Koordinatsystem")
+                        .HasColumnType("varchar(1)");
 
                     b.Property<string>("Byg500Notatlinjer")
                         .HasColumnName("byg500Notatlinjer")
@@ -1393,6 +1419,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<int?>("BfeNummer")
                         .HasColumnName("bfeNummer");
 
+                    b.Property<int?>("BygningPåFremmedGrund")
+                        .HasColumnName("bygningPåFremmedGrund");
+
                     b.Property<string>("EjendommensEjerforholdskode")
                         .HasColumnName("ejendommensEjerforholdskode")
                         .HasColumnType("varchar(2)");
@@ -1403,6 +1432,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<string>("Ejendomstype")
                         .HasColumnName("ejendomstype")
                         .HasColumnType("varchar(40)");
+
+                    b.Property<int?>("Ejerlejlighed")
+                        .HasColumnName("ejerlejlighed");
 
                     b.Property<int?>("Ejerlejlighedsnummer")
                         .HasColumnName("ejerlejlighedsnummer");
@@ -1442,6 +1474,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<DateTime>("Registreringstart")
                         .HasColumnName("registreringstart");
 
+                    b.Property<int?>("SamletFastEjendom")
+                        .HasColumnName("samletFastEjendom");
+
                     b.Property<string>("Status")
                         .HasColumnName("status")
                         .HasColumnType("varchar(2)");
@@ -1475,6 +1510,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<int?>("BfeNummer")
                         .HasColumnName("bfeNummer");
 
+                    b.Property<int?>("BygningPåFremmedGrund")
+                        .HasColumnName("bygningPåFremmedGrund");
+
                     b.Property<string>("EjendommensEjerforholdskode")
                         .HasColumnName("ejendommensEjerforholdskode")
                         .HasColumnType("varchar(2)");
@@ -1485,6 +1523,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<string>("Ejendomstype")
                         .HasColumnName("ejendomstype")
                         .HasColumnType("varchar(40)");
+
+                    b.Property<int?>("Ejerlejlighed")
+                        .HasColumnName("ejerlejlighed");
 
                     b.Property<int?>("Ejerlejlighedsnummer")
                         .HasColumnName("ejerlejlighedsnummer");
@@ -1515,6 +1556,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                         .HasColumnName("registreringsaktør")
                         .HasColumnType("varchar(90)");
 
+                    b.Property<int?>("SamletFastEjendom")
+                        .HasColumnName("samletFastEjendom");
+
                     b.Property<string>("Status")
                         .HasColumnName("status")
                         .HasColumnType("varchar(2)");
@@ -1542,6 +1586,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<int?>("BfeNummer")
                         .HasColumnName("bfeNummer");
 
+                    b.Property<int?>("BygningPåFremmedGrund")
+                        .HasColumnName("bygningPåFremmedGrund");
+
                     b.Property<string>("EjendommensEjerforholdskode")
                         .HasColumnName("ejendommensEjerforholdskode")
                         .HasColumnType("varchar(2)");
@@ -1552,6 +1599,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<string>("Ejendomstype")
                         .HasColumnName("ejendomstype")
                         .HasColumnType("varchar(40)");
+
+                    b.Property<int?>("Ejerlejlighed")
+                        .HasColumnName("ejerlejlighed");
 
                     b.Property<int?>("Ejerlejlighedsnummer")
                         .HasColumnName("ejerlejlighedsnummer");
@@ -1585,6 +1635,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                         .HasColumnName("registreringsaktør")
                         .HasColumnType("varchar(90)");
 
+                    b.Property<int?>("SamletFastEjendom")
+                        .HasColumnName("samletFastEjendom");
+
                     b.Property<string>("Status")
                         .HasColumnName("status")
                         .HasColumnType("varchar(2)");
@@ -1615,8 +1668,8 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<int>("Rowkey")
                         .HasColumnName("rowkey");
 
-                    b.Property<Guid?>("Adresse")
-                        .HasColumnName("adresse");
+                    b.Property<Guid?>("AdresseIdentificerer")
+                        .HasColumnName("adresseIdentificerer");
 
                     b.Property<Guid?>("Bygning")
                         .HasColumnName("bygning");
@@ -1842,8 +1895,8 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<Guid?>("Id")
                         .HasColumnName("id");
 
-                    b.Property<Guid?>("Adresse")
-                        .HasColumnName("adresse");
+                    b.Property<Guid?>("AdresseIdentificerer")
+                        .HasColumnName("adresseIdentificerer");
 
                     b.Property<Guid?>("Bygning")
                         .HasColumnName("bygning");
@@ -2054,8 +2107,8 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<int>("Rowkey")
                         .HasColumnName("rowkey");
 
-                    b.Property<Guid?>("Adresse")
-                        .HasColumnName("adresse");
+                    b.Property<Guid?>("AdresseIdentificerer")
+                        .HasColumnName("adresseIdentificerer");
 
                     b.Property<Guid?>("Bygning")
                         .HasColumnName("bygning");
@@ -3616,6 +3669,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<int>("Rowkey")
                         .HasColumnName("rowkey");
 
+                    b.Property<Guid?>("AdgangFraHusnummer")
+                        .HasColumnName("adgangFraHusnummer");
+
                     b.Property<Guid?>("Bygning")
                         .HasColumnName("bygning");
 
@@ -3636,9 +3692,6 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<string>("Forretningsproces")
                         .HasColumnName("forretningsproces")
                         .HasColumnType("varchar(2)");
-
-                    b.Property<Guid?>("Husnummer")
-                        .HasColumnName("husnummer");
 
                     b.Property<Guid?>("Id")
                         .HasColumnName("id");
@@ -3693,6 +3746,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<Guid?>("Id")
                         .HasColumnName("id");
 
+                    b.Property<Guid?>("AdgangFraHusnummer")
+                        .HasColumnName("adgangFraHusnummer");
+
                     b.Property<Guid?>("Bygning")
                         .HasColumnName("bygning");
 
@@ -3713,9 +3769,6 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<string>("Forretningsproces")
                         .HasColumnName("forretningsproces")
                         .HasColumnType("varchar(2)");
-
-                    b.Property<Guid?>("Husnummer")
-                        .HasColumnName("husnummer");
 
                     b.Property<string>("Kommunekode")
                         .HasColumnName("kommunekode")
@@ -3755,6 +3808,9 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<int>("Rowkey")
                         .HasColumnName("rowkey");
 
+                    b.Property<Guid?>("AdgangFraHusnummer")
+                        .HasColumnName("adgangFraHusnummer");
+
                     b.Property<Guid?>("Bygning")
                         .HasColumnName("bygning");
 
@@ -3775,9 +3831,6 @@ namespace JOInformatik.DawaReplication.DataAccess.Migrations
                     b.Property<string>("Forretningsproces")
                         .HasColumnName("forretningsproces")
                         .HasColumnType("varchar(2)");
-
-                    b.Property<Guid?>("Husnummer")
-                        .HasColumnName("husnummer");
 
                     b.Property<Guid?>("Id")
                         .HasColumnName("id");

@@ -74,7 +74,7 @@ namespace JOInformatik.DawaReplication.DataAccess
         public virtual string Forretningsproces { get; set; }
 
         /// <summary>
-        /// Unik og uforanderlig identifikation af bygværkselementet igennem hele dets livscyklus
+        /// Unik og uforanderlig identifikation af ejendomsrelationen igennem hele dens livscyklus
         /// </summary>
         
         [Column("id")]
@@ -107,27 +107,6 @@ namespace JOInformatik.DawaReplication.DataAccess
         
         [Column("virkningsaktør", TypeName = "varchar(90)")]
         public virtual string Virkningsaktør { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        
-        [Column("bygningPåFremmedGrund")]
-        public virtual int? BygningPåFremmedGrund { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        
-        [Column("ejerlejlighed")]
-        public virtual int? Ejerlejlighed { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        
-        [Column("samletFastEjendom")]
-        public virtual int? SamletFastEjendom { get; set; }
 
         /// <summary>
         /// Angiver den fælles ejendomsidentifikation for den bestemte faste ejendom som den tilhørende BBR-entitet udgør eller indgår i

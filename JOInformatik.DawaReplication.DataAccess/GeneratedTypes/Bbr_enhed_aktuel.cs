@@ -84,8 +84,8 @@ namespace JOInformatik.DawaReplication.DataAccess
         /// 
         /// </summary>
         
-        [Column("adresseIdentificerer")]
-        public virtual Guid? AdresseIdentificerer { get; set; }
+        [Column("adresse")]
+        public virtual Guid? Adresse { get; set; }
 
         /// <summary>
         /// 

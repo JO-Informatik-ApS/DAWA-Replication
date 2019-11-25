@@ -49,9 +49,6 @@ namespace JOInformatik.DawaReplication
         /// <summary>Gets or sets Dawa API uri. Typical 'https://dawa.aws.dk/'.</summary>
         public static string DawaApiUri { get; set; }
 
-        /// <summary>Gets or sets Dawa Test API uri.</summary>
-        public static string DawaTestApiUri { get; set; }
-
         /// <summary>Gets or sets Dawa API timeout in seconds. Defaults to 300 seconds.</summary>
         public static int ReadTimeoutInSeconds { get; set; }
 
@@ -99,7 +96,7 @@ namespace JOInformatik.DawaReplication
         /// <param name="dawaApiUri">Typical 'https://dawa.aws.dk/' .</param>
         /// <param name="readTimeoutInSeconds">DAWA api timeout in seconds. Normally 300 seconds.</param>
         /// <param name="udtraekRowsMax">Max number of rows to read. When 0 all rows are read.</param>
-        public static void InitSettings(DawaReplicationDBContext dbContext, List<string> tableList, string dawaApiUri, string dawaTestApiUri, int readTimeoutInSeconds, int udtraekRowsMax, int udtraekBulkSize, int dkStedDataStartPos, int dkStedBulkSize, int dbCommandTimeoutInSeconds, string tempDataFolderPath, bool activeFixes, string activeFixesListFileLocation, bool useMSApplicationInsights, bool jsonSerializerIgnoreNullValue)
+        public static void InitSettings(DawaReplicationDBContext dbContext, List<string> tableList, string dawaApiUri, int readTimeoutInSeconds, int udtraekRowsMax, int udtraekBulkSize, int dkStedDataStartPos, int dkStedBulkSize, int dbCommandTimeoutInSeconds, string tempDataFolderPath, bool activeFixes, string activeFixesListFileLocation, bool useMSApplicationInsights, bool jsonSerializerIgnoreNullValue)
         {
             if (tableList == null)
             {
@@ -114,11 +111,6 @@ namespace JOInformatik.DawaReplication
             if (string.IsNullOrEmpty(dawaApiUri))
             {
                 throw new ArgumentNullException(nameof(dawaApiUri));
-            }
-
-            if (string.IsNullOrEmpty(dawaTestApiUri))
-            {
-                throw new ArgumentNullException(nameof(dawaTestApiUri));
             }
 
             if (readTimeoutInSeconds == 0)
@@ -139,7 +131,6 @@ namespace JOInformatik.DawaReplication
             DBContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
             TableList = tableList;
             DawaApiUri = dawaApiUri.EndsWith("/") ? dawaApiUri : dawaApiUri + "/";
-            DawaTestApiUri = dawaTestApiUri.EndsWith("/") ? dawaTestApiUri : dawaTestApiUri + "/";
             ReadTimeoutInSeconds = readTimeoutInSeconds;
             UdtraekRowsMax = udtraekRowsMax;
             UdtraekBulkSize = udtraekBulkSize;
@@ -277,7 +268,7 @@ namespace JOInformatik.DawaReplication
             // Always use "&noformat" for increased performance:
             using (var httpClient = new HttpClient())
             {
-                var stream = httpClient.GetStreamAsync($"{(entityName.ToUpperInvariant().StartsWith("BBR_") ? DawaTestApiUri : DawaApiUri)}replikering/udtraek?entitet={entityName.ToLowerInvariant()}&txid={dawaProcessInfo.Txid}&noformat").Result;
+                var stream = httpClient.GetStreamAsync($"{DawaApiUri}replikering/udtraek?entitet={entityName.ToLowerInvariant()}&txid={dawaProcessInfo.Txid}&noformat").Result;
                 stream.ReadTimeout = ReadTimeoutInSeconds * 1000;
                 using (var reader = new JsonTextReader(new StreamReader(stream)))
                 {

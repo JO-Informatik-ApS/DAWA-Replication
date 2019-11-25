@@ -37,7 +37,7 @@ namespace JOInformatik.DawaReplication.DataAccess
 
                 -- ^^^^^^^^^^ Rebuild all indices after udtraek. ^^^^^^^^^^";
 
-            dbContext.Database.ExecuteSqlCommand(sql);
+            dbContext.Database.ExecuteSqlCommandAsync(sql);
 
         }
 
